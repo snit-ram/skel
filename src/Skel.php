@@ -23,7 +23,25 @@ class Skel{
             $return = $this->$magicMethod();
             return $return;
         }
-        
+
         return $this->$attribute;
+    }
+
+
+    /**
+     * Magic method that sets the value for protected attributes
+     * @param string $attribute the attribute name
+     * @param mixed $value the value to be set to attribute
+     * @return null
+     * @ignore
+     */
+    public function __set( $attribute, $value ){
+        $magicMethod = '__set' . ucfirst($attribute);
+        if( method_exists($this, $magicMethod) ){
+            $this->$attribute = $this->$magicMethod( $value );
+            return;
+        }
+
+        $this->$attribute = $value;
     }
 }
