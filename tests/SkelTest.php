@@ -1,5 +1,5 @@
 <?php
-require 'src/Skel.php';
+require_once __DIR__.'/../src/Skel.php';
 
 use skel\Skel;
 
@@ -8,7 +8,7 @@ class ModelMock extends Skel{
     protected $age = 25;
     protected $address;
     protected $nameWithMagicGet = 'snit';
-    protected $nameWithMagicSet = 'snit';
+    protected $nameWithMagicSet;
 
     function __getNameWithMagicGet(){
         return strtoupper( $this->nameWithMagicGet );

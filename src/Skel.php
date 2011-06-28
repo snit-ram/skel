@@ -1,6 +1,8 @@
 <?php
 namespace skel;
 
+require_once __DIR__."/annotations/annotations.php";
+
 /**
  * Main Skel class
  *

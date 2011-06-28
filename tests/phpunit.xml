@@ -1,0 +1,7 @@
+<phpunit colors="true">
+   <filter>
+      <blacklist>
+         <directory>../src/lib/addendum</directory>
+      </blacklist>
+   </filter>
+</phpunit>
